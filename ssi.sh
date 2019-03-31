@@ -1,5 +1,4 @@
 #!/bin/bash
-# Pre-reqs: You need an example.com.conf in the /etc/apache/sites-available directory that is set up correctly.
 # To use this script, call the script with the base_URL in lowercase as the first argument
 # example use: ./ssi.sh snapshotdev.com database
  
@@ -47,6 +46,8 @@ if [ -d "$hostname" ]; then
 ----------------------------------------------------------------"
 
 # Create the vhost 
+sudo cp templates/example.com.conf /etc/apache2/sites-available/
+sudo chown root:root /etc/apache2/sites-available/example.com.conf
 cd /etc/apache2/sites-available
 if [ -f "$vhost" ]; then
 		echo "File: $vhost exists. Exiting."
