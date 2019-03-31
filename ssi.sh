@@ -1,6 +1,6 @@
 #!/bin/bash
 # To use this script, call the script with the base_URL in lowercase as the first argument
-# example use: ./ssi.sh snapshotdev.com database
+# example use: ./ssi.sh stage.site.com STAGEsitedb
  
 # Input testing for URL
 if [ $# -eq 0 ]
