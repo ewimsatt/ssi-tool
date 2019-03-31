@@ -1,6 +1,6 @@
 #!/bin/bash
 # To use this script, call the script with the base_URL in lowercase as the first argument
-# example use: ./ssi.sh stage.site.com STAGEsitedb
+# example use: ssi stage.site.com STAGEsitedb
  
 # Input testing for URL
 if [ $# -eq 0 ]
@@ -9,7 +9,7 @@ if [ $# -eq 0 ]
 		
 		You forgot the base_URL. Correct syntax is: ./ssi.sh base_URL databasename
 		
-		Example: ./ssi.sh snapshotdev.com ssdevdb
+		Example: ssi stage.site.com STAGEsitedb
 		
 		"
 		exit 1
