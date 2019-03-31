@@ -7,7 +7,7 @@ if [ $# -eq 0 ]
 	then
 		echo "
 		
-		You forgot the base_URL. Correct syntax is: ./ssi.sh base_URL databasename
+		You forgot the base_URL. Correct syntax is: ssi base_URL databasename
 		
 		Example: ssi stage.site.com STAGEsitedb
 		
