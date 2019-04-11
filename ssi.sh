@@ -1,6 +1,17 @@
 #!/bin/bash
 # To use this script, call the script with the base_URL in lowercase as the first argument
 # example use: ssi stage.site.com STAGEsitedb
+
+## Coming soon... will uncomment when ready
+## Confirming that reqs are installed
+#if ! [ -x "$(command -v ccrypt)" ]; then
+#	echo 'Error: ccrypt is not installed. Try: sudo apt install ccrypt' >&2
+#	exit 1
+#elif ! [ -x "$(command -v wget)" ]; then
+#        echo 'Error: wget is not installed. Try: sudo apt install wget' >&2
+#        exit 1
+#fi
+
  
 # Input testing for URL
 if [ $# -eq 0 ]
@@ -22,7 +33,7 @@ vhost=$1.conf
 PASS=$(cat /dev/urandom | tr -cd "[:alnum:]" | tr Ol o1 | head -c 16)
 
 # Create the file structure
-cd /var/www/html
+cd /var/www/html || exit
 if [ -d "$hostname" ]; then
 		echo "Directory: $hostname exists. Exiting."
 			exit;
@@ -46,9 +57,9 @@ if [ -d "$hostname" ]; then
 ----------------------------------------------------------------"
 
 # Create the vhost 
-sudo cp templates/example.com.conf /etc/apache2/sites-available/
-sudo chown root:root /etc/apache2/sites-available/example.com.conf
-cd /etc/apache2/sites-available
+#sudo cp templates/example.com.conf /etc/apache2/sites-available/
+#sudo chown root:root /etc/apache2/sites-available/example.com.conf
+cd /etc/apache2/sites-available || exit
 if [ -f "$vhost" ]; then
 		echo "File: $vhost exists. Exiting."
 			exit;
