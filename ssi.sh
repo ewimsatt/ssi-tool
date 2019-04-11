@@ -1,4 +1,5 @@
 #!/bin/bash
+# For Wyatt
 # To use this script, call the script with the base_URL in lowercase as the first argument
 # example use: ssi stage.site.com STAGEsitedb
 
