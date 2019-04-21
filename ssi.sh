@@ -15,7 +15,7 @@
 
  
 # Input testing for URL
-if [ $# -eq 0 ]
+if [ $# -lt 2 ]
 	then
 		echo "
 		
